@@ -7,7 +7,6 @@ License: MIT + file LICENSE
 Imports: 
     attempt,
     barao (>= 0.1.0),
-    comerciobr (>= 0.1.0),
     config (>= 0.3.1),
     data.table,
     dplyr,
@@ -24,6 +23,7 @@ Imports:
     purrr,
     shiny (>= 1.6.0.9000),
     shinydashboard,
+    thinkr,
     tibble,
     tidyr
 Encoding: UTF-8
@@ -35,7 +35,6 @@ Suggests:
 Config/testthat/edition: 3
 Language: en-US
 Remotes: 
-    fernandobastosneto/comerciobr,
     fernandobastosneto/barao
 Depends: 
     R (>= 2.10)
