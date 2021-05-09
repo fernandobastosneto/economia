@@ -4,6 +4,8 @@
 # economia
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/fernandobastosneto/economia/workflows/R-CMD-check/badge.svg)](https://github.com/fernandobastosneto/economia/actions)
 <!-- badges: end -->
 
 Shiny app com informações de conjuntura do comércio brasileiro com base

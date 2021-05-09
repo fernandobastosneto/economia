@@ -1,0 +1,57 @@
+on:
+  schedule:
+  - cron: "0 0 7 * *"
+  push:
+    branches:
+      - master
+
+name: update-app
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Instalar R
+        uses: r-lib/actions/setup-r@v1
+
+      - name: Instalar libgit
+        run: |
+          brew install libgit2
+        
+      - name: Instalar dependencias
+        run: |
+          install.packages("remotes")
+          install.packages("shiny")
+          remotes::install_local(".")
+          remotes::install_dev("golem")
+          remotes::install_cran("tidyverse")
+        shell: Rscript {0}
+        
+      - name: Execute Script
+        run: |
+          source('data-raw/comex_stat.R')
+        shell: Rscript {0}
+
+      - name: Conectando ao ShinyApps
+        env:
+          SHINY_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
+          SHINY_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
+        run: |
+          shiny_token = Sys.getenv("SHINY_TOKEN")
+          shiny_secret = Sys.getenv("SHINY_SECRET")
+          rsconnect::setAccountInfo('fernandobastos', token = shiny_token, secret = shiny_secret)
+        shell: Rscript {0}
+
+      - name: Deploy to ShinyApps
+        run: |
+          rsconnect::deployApp(appTitle = "economia", 
+          forceUpdate = getOption("rsconnect.force.update.apps", TRUE))
+        shell: Rscript {0}
