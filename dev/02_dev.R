@@ -19,6 +19,8 @@
 usethis::use_package( "thinkr" )
 usethis::use_dev_package("barao")
 usethis::use_package("shinydashboard")
+usethis::use_package("remotes")
+usethis::use_package("devtools")
 usethis::use_package("barao")
 usethis::use_package("httr")
 usethis::use_package("jsonlite")
@@ -29,6 +31,7 @@ usethis::use_package("tidyr")
 usethis::use_package("data.table")
 usethis::use_package("ggplot2")
 usethis::use_package("ggthemes")
+usethis::use_package("scales")
 usethis::use_pipe()
 
 

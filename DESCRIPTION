@@ -25,6 +25,7 @@ Imports:
     purrr,
     remotes,
     rsconnect,
+    scales,
     shiny (>= 1.6.0.9000),
     shinydashboard,
     thinkr,
