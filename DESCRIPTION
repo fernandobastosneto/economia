@@ -22,6 +22,7 @@ Imports:
     pkgload,
     processx,
     purrr,
+    rsconnect,
     shiny (>= 1.6.0.9000),
     shinydashboard,
     thinkr,
