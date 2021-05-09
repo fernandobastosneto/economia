@@ -19,6 +19,7 @@ Imports:
     htmltools,
     httr,
     jsonlite,
+    magrittr,
     processx,
     purrr,
     shiny (>= 1.6.0.9000),
@@ -33,7 +34,7 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Language: en-US
-Remotes:  
+Remotes: 
     fernandobastosneto/comerciobr,
     fernandobastosneto/barao
 Depends: 
