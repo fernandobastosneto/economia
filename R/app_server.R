@@ -43,7 +43,7 @@ app_server <- function( input, output, session ) {
       dplyr::mutate(diferenca = media_movel_industria/media_movel_total) %>%
       ggplot2::ggplot() +
       ggplot2::geom_line(ggplot2::aes(ano_mes, diferenca, color = diferenca), show.legend = F) +
-      ggplot2::labs(title = "Exportações industriais ponderadas por exportações totais",
+      ggplot2::labs(title = "Parcela de Bens Industriais nas Exportações Totais",
            subtitle = "Acumulado 12 meses",
            caption = "Formulação: MRE, Fonte: Ministério da Economia",
            x = NULL,

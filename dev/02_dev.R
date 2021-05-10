@@ -18,6 +18,7 @@
 
 usethis::use_package( "thinkr" )
 usethis::use_dev_package("barao")
+usethis::use_dev_package("shiny")
 usethis::use_package("shinydashboard")
 usethis::use_package("remotes")
 usethis::use_package("spelling")
